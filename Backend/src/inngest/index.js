@@ -53,6 +53,10 @@ const syncUserUpdation = inngest.createFunction(
 )
 
 // Create an empty array for Inngest functions
-const functions = [];
+const functions = [
+  syncUserCreation,
+  syncUserDeletion,
+  syncUserUpdation
+];
 
 module.exports = { inngest, functions, syncUserCreation, syncUserDeletion, syncUserUpdation};
