@@ -12,12 +12,20 @@ app.use(express.json());
 app.use(cookieParser());
 
 app.use(cors({
-    origin: 'http://localhost:5173',
-    credentials: true
-}))
+  origin: "http://localhost:5173",
+  credentials: true
+}));
 
 app.use(clerkMiddleware())
 
+app.get("/", (req, res) => {
+  res.json({
+    message: "Movie Booking Backend is running"
+  });
+});
+
 app.use("/api/inngest", serve({ client: inngest, functions }));
+
+
 
 module.exports = app
