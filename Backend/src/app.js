@@ -4,6 +4,7 @@ const cookieParser = require("cookie-parser");
 const { clerkMiddleware } = require('@clerk/express');
 const { serve } = require("inngest/express");
 const { inngest, functions } = require("./inngest/index");
+const router = require("./Router/showRouter");
 
 
 const app = express();
@@ -23,6 +24,8 @@ app.get("/", (req, res) => {
     message: "Movie Booking Backend is running"
   });
 });
+
+app.use("/api/show", router);
 
 app.use("/api/inngest", serve({ client: inngest, functions }));
 
