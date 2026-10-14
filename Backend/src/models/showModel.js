@@ -24,6 +24,6 @@ const showSchema = new mongoose.Schema({
 }, {minimize: false}
 )
 
-const showModel = mongoose.model("show",showSchema)
+const show = mongoose.model("show",showSchema)
 
-module.exports = showModel
+module.exports = show
