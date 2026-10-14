@@ -70,7 +70,10 @@ async function addShow(req, res) {
         casts: movieCreditData.cast,
         release_date: movieApiData.release_date,
         original_language: movieApiData.original_language,
-        tagline: movieApiData.tagline
+        tagline: movieApiData.tagline,
+
+        runtime: movieApiData.runtime,
+  vote_average: movieApiData.vote_average
       };
 
       movie = await movieModel.create(movieDetails);
